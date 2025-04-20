@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="clr-namespace:YanissApp.Views"
+    x:Class="YanissApp.AppShell">
+  
+  <TabBar>
+    <ShellContent
+      Title="Accueil"
+      Icon="home.png"
+      ContentTemplate="{DataTemplate views:HomePage}" />
+
+    <ShellContent
+      Title="Liste"
+      Icon="list.png"
+      x:Name="ListTab"
+      ContentTemplate="{DataTemplate views:ListPage}" />
+
+    <ShellContent
+      Title="Ajout"
+      Icon="add.png"
+      ContentTemplate="{DataTemplate views:AddPage}" />
+
+    <ShellContent
+      Title="Plus"
+      Icon="more.png"
+      ContentTemplate="{DataTemplate views:ToolPage}" />
+  </TabBar>
+  <Shell.NavBarIsVisible>False</Shell.NavBarIsVisible>
+</Shell>

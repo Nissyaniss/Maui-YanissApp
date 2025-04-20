@@ -1,0 +1,23 @@
+<ContentPage
+    x:Class="YanissApp.Views.AddPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:viewModels="clr-namespace:YanissApp.ViewModels"
+    x:DataType="viewModels:AddJokeViewModel">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+
+            <Label Text="Ajouter une nouvelle blague" FontSize="24" FontAttributes="Bold"/>
+
+            <Entry x:Name="Type" Placeholder="Type" Text="{Binding Type}" />
+            <Entry x:Name="Setup" Placeholder="Setup" Text="{Binding Setup}" />
+            <Entry x:Name="Punchline" Placeholder="Punchline" Text="{Binding Punchline}" />
+
+            <Button Text="Ajouter la blague" Clicked="OnAddJokeClicked" />
+            
+            <Label x:Name="Error" Text="Erreur toutes les infos doivent etre rentrees" TextColor="Red" IsVisible="False"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

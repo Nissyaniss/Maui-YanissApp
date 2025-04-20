@@ -1,0 +1,23 @@
+<ContentPage
+    x:Class="YanissApp.Views.ToolPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:viewmodel="clr-namespace:YanissApp.ViewModels"
+    x:DataType="viewmodel:ToolPageViewModel">
+
+    <StackLayout VerticalOptions="Center" HorizontalOptions="Center" Spacing="20">
+        <Label Text="Bienvenue sur la page des autres fonctionnalités"
+               FontSize="24" />
+        
+        <Button
+            Text="Traqueur de Dépenses Journalières" 
+            Clicked="OnExpenseButtonClicked"
+            HorizontalOptions="Center"
+            TextColor="White"/>
+        <Button
+            Text="Citations" 
+            Clicked="OnCitationButtonClicked"
+            HorizontalOptions="Center"
+            TextColor="White"/>
+    </StackLayout>
+</ContentPage>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="YanissApp.Views.ListPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:viewModels="clr-namespace:YanissApp.ViewModels"
+    xmlns:model="clr-namespace:YanissApp.Models"
+    x:DataType="viewModels:JokeListViewModel">
+
+    <RefreshView
+        IsRefreshing="{Binding IsBusy}"
+        Command="{Binding LoadJokesCommand}">
+        <CollectionView
+            ItemsSource="{Binding Jokes}"
+            SelectedItem="{Binding SelectedItem}"
+            SelectionMode="Single"
+            SelectionChangedCommand="{Binding JokeSelectedCommand}"
+            SelectionChangedCommandParameter="{Binding SelectedItem}">
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="model:Jokes">
+                    <Grid Padding="10" HeightRequest="120" Margin="15" RowDefinitions="Auto,Auto,Auto">
+                        <Label Grid.Row="0"
+                            Text="{Binding Type}" 
+                               FontSize="16" 
+                               VerticalOptions="Center" />
+                        <Label Grid.Row="1"
+                               Text="{Binding Setup}" 
+                               FontSize="16" 
+                               VerticalOptions="Center" />
+                        <Label Grid.Row="2"
+                               Text="{Binding Punchline}" 
+                               FontSize="16" 
+                               VerticalOptions="Center" />
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </RefreshView>
+</ContentPage>
